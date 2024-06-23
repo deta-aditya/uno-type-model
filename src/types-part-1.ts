@@ -1,13 +1,13 @@
 // ======================
-// Workflow Model
+// Workflows
 // ======================
 
-type StartGame = (game: UnstartedGame) => PlayingGame;
+export type StartGame = (game: UnstartedGame) => PlayingGame;
 
-type PlayGame = (game: PlayingGame) => PlayGameResult;
+export type PlayGame = (game: PlayingGame) => PlayGameResult;
 
 // ======================
-// State Model
+// States
 // ======================
 
 type UnstartedGame = {
