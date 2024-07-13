@@ -29,7 +29,7 @@ export type DealCards = (game: ShuffledUnstartedGame) => DealtUnstartedGame;
 
 type DealtUnstartedGame = {
   deck: DealtDeck;
-  players: Array<Player>;
+  players: PlayersInWaiting;
 };
 
 export type InitiateStartingCard = (game: DealtUnstartedGame) => InitiatedUnstartedGame;
@@ -37,7 +37,7 @@ export type InitiateStartingCard = (game: DealtUnstartedGame) => InitiatedUnstar
 type InitiatedUnstartedGame = {
   deck: PlayableDeck;
   discardPile: DiscardPile;
-  players: Array<Player>;
+  players: PlayersInWaiting;
 };
 
 export type DetermineFirstPlayer = (game: InitiatedUnstartedGame) => PlayingGame;
@@ -84,7 +84,7 @@ type FinishedGame = {
   deck: PlayableDeck;
   discardPile: DiscardPile;
   wininngPlayer: PlayerName;
-  losingPlayer: Array<Player>;
+  losingPlayer: LostPlayers;
 };
 
 export type NextTurn = (game: NoCurrentPlayerGame) => PlayingGame;
@@ -164,3 +164,5 @@ type PlayableCard = Card;
 type UnplayableHand = Array<Card>;
 
 type PlayersInWaiting = Array<Player>;
+
+type LostPlayers = Array<Player>;
