@@ -84,7 +84,7 @@ type FinishedGame = {
   deck: PlayableDeck;
   discardPile: DiscardPile;
   wininngPlayer: PlayerName;
-  losingPlayer: LostPlayers;
+  losingPlayers: LosingPlayers;
 };
 
 export type NextTurn = (game: NoCurrentPlayerGame) => PlayingGame;
@@ -165,4 +165,4 @@ type UnplayableHand = Array<Card>;
 
 type PlayersInWaiting = Array<Player>;
 
-type LostPlayers = Array<Player>;
+type LosingPlayers = Array<Player>;
